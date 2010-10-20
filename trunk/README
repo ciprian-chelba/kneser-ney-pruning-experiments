@@ -1,0 +1,47 @@
+Copyright 2010 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+-----------------------------------------------------------------------------------
+Scripts that enable third parties to replicate the results reported in the paper: 
+
+@InProceedings{chelba:interspeech2010,
+  title =        {{Study on Interaction between Entropy Pruning and Kneser-Ney Smoothing}},
+  author =       {Ciprian Chelba, Thorsten Brants, Will Neveitt, Peng Xu},
+  booktitle =    {Proc. Interspeech},
+  year = 	 {2010},
+  address = 	 {Makuhari, Japan},
+  pages =	 {2242-2245},
+  month = 	 {September},
+  organization = {ISCA},
+  url = {http://research.google.com/pubs/pub36472.html}
+}
+
+The data itself (Linguistic Data Consortium CD "CSR LM 96 CD-ROM release disk 1") 
+is not part of the release. 
+
+However, anyone that has it will be able to reproduce our experiments using the 
+scripts provided here. It should be easy to generate the data, and then run the 
+experiments:
+
+0. Make sure you have perl, python and a version of the SRILM toolkit installed.
+
+1. Copy BN data from CSR LM 96 CD-ROM release disk 1 --- "conditioned" data 
+(or "vp", for "verbalized punctuation") version of the language modeling 
+data for the 1996 Continuous Speech Recognition Hub 4 Evaluation --- 
+to $TEXTTOP/Resources/LDC/vp_train/bn*Z.
+
+2. Run ./Resources/bin/PrepLMData.sh to get the LM training/test data.
+
+3. Edit the variables at the top of ./Resources/bin/Run.pl and run it to get
+Table 3 in our Interspeech 2010 paper.
